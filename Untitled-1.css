@@ -1,0 +1,36 @@
+/* add to Login.css or global styles */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea,
+select {
+    color: #0b1220 !important;                /* visible text color */
+    background-color: #701c1c !important;     /* ensure white background */
+    caret-color: #0b1220 !important;          /* cursor color */
+    -webkit-text-fill-color: #0b1220 !important; /* Chrome autofill text */
+    background-clip: padding-box;
+}
+
+/* placeholder color */
+input::placeholder,
+textarea::placeholder {
+    color: #9aa3ad !important;
+    opacity: 1;
+}
+
+/* override Chrome/Edge autofill background and text */
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+    -webkit-text-fill-color: #0b1220 !important;
+    caret-color: #0b1220 !important;
+    -webkit-box-shadow: 0 0 0px 1000px #ffffff inset !important;
+    box-shadow: 0 0 0px 1000px #ffffff inset !important;
+}
+
+/* optional: ensure focus remains readable */
+input:focus,
+textarea:focus,
+select:focus {
+    outline: 2px solid rgba(11,18,32,0.08);
+}

@@ -1,0 +1,4 @@
+{
+  "name": "Intrusion Detection System",
+  "description": "An Intrusion Detection System using an ensemble of machine learning models with incremental majority voting to detect network intrusions. Features pages for training, updating, predicting, and monitoring models."
+}
