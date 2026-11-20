@@ -53,3 +53,6 @@ htmlcov/
 
 # Separate project - not part of this repository
 Med ai/
+
+# Local security scan database
+backend/security_scans.db

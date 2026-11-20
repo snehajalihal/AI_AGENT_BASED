@@ -1,20 +1,14 @@
+
 "use client"
 
 import type React from "react"
 import type { Page } from "../types"
 import {
   Shield,
-  Activity,
-  AlertTriangle,
-  Settings,
   BarChart3,
-  Upload,
-  TrendingUp,
   Home,
   Info,
   LogOut,
-  Wrench,
-  Heart,
 } from "lucide-react"
 
 interface NavbarProps {
@@ -32,6 +26,7 @@ const NavItem: React.FC<{
   children: React.ReactNode
 }> = ({ page, activePage, setActivePage, icon, children }) => {
   const isActive = activePage === page
+
   return (
     <button
       onClick={() => setActivePage(page)}
@@ -47,22 +42,32 @@ const NavItem: React.FC<{
   )
 }
 
-const Navbar: React.FC<NavbarProps> = ({ activePage, setActivePage, isAuthenticated, onLogout }) => {
+const Navbar: React.FC<NavbarProps> = ({
+  activePage,
+  setActivePage,
+  isAuthenticated,
+  onLogout,
+}) => {
   return (
     <header className="bg-card/50 backdrop-blur-xl shadow-lg sticky top-0 z-50 border-b border-border">
       <nav className="container mx-auto px-4 sm:px-6 lg:px-8 py-4">
-        <div className="flex justify-between items-center">
+        <div className="flex flex-wrap justify-between items-center gap-4">
           <div className="flex items-center gap-3">
             <div className="p-2 bg-primary/10 rounded-lg">
               <Shield className="w-6 h-6 text-primary" />
             </div>
+
             <div>
-              <h1 className="text-xl font-bold text-foreground">SecureAI Scanner</h1>
-              <p className="text-xs text-muted-foreground">Vulnerability & Network Analysis</p>
+              <h1 className="text-xl font-bold text-foreground">
+                SecureAI Scanner
+              </h1>
+              <p className="text-xs text-muted-foreground">
+                Windows Vulnerability & Network Scanner
+              </p>
             </div>
           </div>
 
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2 flex-wrap">
             {isAuthenticated ? (
               <>
                 <NavItem
@@ -73,62 +78,7 @@ const Navbar: React.FC<NavbarProps> = ({ activePage, setActivePage, isAuthentica
                 >
                   Dashboard
                 </NavItem>
-                <NavItem
-                  page="Alerts"
-                  activePage={activePage}
-                  setActivePage={setActivePage}
-                  icon={<AlertTriangle className="w-4 h-4" />}
-                >
-                  Alerts
-                </NavItem>
-                <NavItem
-                  page="Remediation"
-                  activePage={activePage}
-                  setActivePage={setActivePage}
-                  icon={<Wrench className="w-4 h-4" />}
-                >
-                  Remediation
-                </NavItem>
-                <NavItem
-                  page="SystemHealth"
-                  activePage={activePage}
-                  setActivePage={setActivePage}
-                  icon={<Heart className="w-4 h-4" />}
-                >
-                  System Health
-                </NavItem>
-                <NavItem
-                  page="Train"
-                  activePage={activePage}
-                  setActivePage={setActivePage}
-                  icon={<Upload className="w-4 h-4" />}
-                >
-                  Train
-                </NavItem>
-                <NavItem
-                  page="Predict"
-                  activePage={activePage}
-                  setActivePage={setActivePage}
-                  icon={<Activity className="w-4 h-4" />}
-                >
-                  Predict
-                </NavItem>
-                <NavItem
-                  page="Vote"
-                  activePage={activePage}
-                  setActivePage={setActivePage}
-                  icon={<TrendingUp className="w-4 h-4" />}
-                >
-                  Vote
-                </NavItem>
-                <NavItem
-                  page="Update"
-                  activePage={activePage}
-                  setActivePage={setActivePage}
-                  icon={<Settings className="w-4 h-4" />}
-                >
-                  Settings
-                </NavItem>
+
                 <NavItem
                   page="About"
                   activePage={activePage}
@@ -137,6 +87,7 @@ const Navbar: React.FC<NavbarProps> = ({ activePage, setActivePage, isAuthentica
                 >
                   About
                 </NavItem>
+
                 <button
                   onClick={onLogout}
                   className="flex items-center gap-2 px-4 py-2.5 text-sm font-medium rounded-lg transition-all duration-200 text-muted-foreground hover:text-destructive hover:bg-destructive/10"
@@ -155,6 +106,7 @@ const Navbar: React.FC<NavbarProps> = ({ activePage, setActivePage, isAuthentica
                 >
                   Home
                 </NavItem>
+
                 <NavItem
                   page="About"
                   activePage={activePage}
@@ -163,6 +115,7 @@ const Navbar: React.FC<NavbarProps> = ({ activePage, setActivePage, isAuthentica
                 >
                   About
                 </NavItem>
+
                 <button
                   onClick={() => setActivePage("Login")}
                   className="px-6 py-2.5 text-sm font-semibold rounded-lg bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-200 shadow-lg shadow-primary/20"

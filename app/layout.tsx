@@ -1,3 +1,4 @@
+
 import type React from "react"
 import type { Metadata } from "next"
 import { GeistSans } from "geist/font/sans"
@@ -7,9 +8,10 @@ import "./globals.css"
 import { Suspense } from "react"
 
 export const metadata: Metadata = {
-  title: "AI-based Windows System Vulnerability and Network Scanner",
-  description: "Advanced AI-powered intrusion detection and vulnerability scanning system",
-  generator: "v0.app",
+  title: "AI-Based Windows System Vulnerability & Network Scanner",
+  description:
+    "A Windows security assessment application for monitoring system resources and checking firewall, Microsoft Defender, and Windows Update status.",
+  generator: "Next.js",
 }
 
 export default function RootLayout({
@@ -19,8 +21,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark">
-      <body className={`font-sans ${GeistSans.variable} ${GeistMono.variable} antialiased`}>
-        <Suspense fallback={<div>Loading...</div>}>{children}</Suspense>
+      <body
+        className={`font-sans ${GeistSans.variable} ${GeistMono.variable} antialiased`}
+      >
+        <Suspense fallback={<div>Loading...</div>}>
+          {children}
+        </Suspense>
         <Analytics />
       </body>
     </html>

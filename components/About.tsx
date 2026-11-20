@@ -1,50 +1,106 @@
-import React from 'react';
-import InfoCard from './Card';
-import { InfoIcon, CogIcon, CodeIcon } from './icons/Icons';
+
+import React from "react"
+import InfoCard from "./Card"
+import { InfoIcon, CogIcon, CodeIcon } from "./icons/Icons"
 
 const About: React.FC = () => {
-    return (
-        <div className="max-w-4xl mx-auto animate-fade-in space-y-8">
-            <div className="text-center">
-                <h1 className="text-4xl font-bold tracking-tight text-gray-100 sm:text-5xl bg-clip-text text-transparent bg-gradient-to-r from-primary via-secondary to-accent">
-                    About The IDS System
-                </h1>
-                <p className="mt-3 text-xl text-gray-400 sm:mt-4">
-                    An advanced, machine learning-powered security solution.
-                </p>
-            </div>
-            
-            <InfoCard title="Our Mission" icon={<InfoIcon />}>
-                <p className="text-gray-300">
-                    Our mission is to provide a powerful, intuitive, and adaptable Intrusion Detection System (IDS) that leverages the strength of ensemble machine learning. We aim to democratize network security by creating a tool that not only accurately detects threats but also allows for user interaction and incremental learning, ensuring the system evolves to counter new and emerging cyber threats effectively.
-                </p>
-            </InfoCard>
+  return (
+    <div className="max-w-4xl mx-auto animate-fade-in space-y-8">
+      <div className="text-center">
+        <h1 className="text-4xl font-bold tracking-tight text-gray-100 sm:text-5xl bg-clip-text text-transparent bg-gradient-to-r from-primary via-secondary to-accent">
+          About SecureAI Scanner
+        </h1>
+        <p className="mt-3 text-xl text-gray-400 sm:mt-4">
+          Windows System Vulnerability & Network Scanner
+        </p>
+      </div>
 
-            <InfoCard title="How It Works: Ensemble Learning" icon={<CogIcon />}>
-                <p className="text-gray-300 mb-4">
-                    This system doesn't rely on a single model. Instead, it uses an "ensemble" approach, combining the predictions of multiple diverse machine learning algorithms to arrive at a more robust and accurate conclusion. This method, known as Incremental Majority Voting, reduces the risk of errors from any single model.
-                </p>
-                <ul className="list-disc list-inside space-y-2 pl-2 text-gray-300">
-                    <li><strong>Multiple Models:</strong> We utilize Random Forest, Gradient Boosting, and Support Vector Machines (SVM), each with unique strengths in pattern recognition.</li>
-                    <li><strong>Weighted Voting:</strong> Each model is assigned a "weight" based on its historical performance. Models that perform better have a greater say in the final decision.</li>
-                    <li><strong>User Influence:</strong> Through the "Vote" page, users can contribute to the model preference, influencing which algorithm gets prioritized in the prediction process.</li>
-                    <li><strong>Incremental Updates:</strong> The system can be retrained on new data, allowing it to adapt to new types of network traffic and potential threats without starting from scratch.</li>
-                </ul>
-            </InfoCard>
+      <InfoCard title="Our Project" icon={<InfoIcon />}>
+        <p className="text-gray-300">
+          AI-Based Windows System Vulnerability & Network Scanner is a
+          security assessment application designed to monitor system
+          resources and identify basic Windows security issues. It
+          collects system information and checks important security
+          settings to help users understand the security status of
+          their Windows computer.
+        </p>
+      </InfoCard>
 
-            <InfoCard title="Technology Stack" icon={<CodeIcon />}>
-                <p className="text-gray-300 mb-4">
-                    This application is built with a modern, performant, and scalable technology stack:
-                </p>
-                 <ul className="list-disc list-inside space-y-2 pl-2 text-gray-300">
-                    <li><strong>Frontend Framework:</strong> React for a dynamic and component-based user interface.</li>
-                    <li><strong>Styling:</strong> Tailwind CSS for a utility-first, highly customizable design system that enables rapid UI development.</li>
-                    <li><strong>Data Visualization:</strong> Recharts for creating beautiful, interactive, and responsive charts and graphs.</li>
-                    <li><strong>Language:</strong> TypeScript for type safety, better developer experience, and more maintainable code.</li>
-                </ul>
-            </InfoCard>
-        </div>
-    );
-};
+      <InfoCard title="How It Works" icon={<CogIcon />}>
+        <p className="text-gray-300 mb-4">
+          The application collects system information and performs
+          security checks using Windows security services. The
+          collected results are displayed through a dashboard for
+          easy monitoring and assessment.
+        </p>
 
-export default About;
+        <ul className="list-disc list-inside space-y-2 pl-2 text-gray-300">
+          <li>
+            <strong>System Monitoring:</strong> Displays CPU, memory
+            and disk usage.
+          </li>
+          <li>
+            <strong>Firewall Assessment:</strong> Checks the status
+            of Windows Firewall profiles.
+          </li>
+          <li>
+            <strong>Microsoft Defender:</strong> Checks antivirus,
+            real-time protection and antispyware status.
+          </li>
+          <li>
+            <strong>Windows Updates:</strong> Identifies pending
+            Windows updates.
+          </li>
+          <li>
+            <strong>Security Assessment:</strong> Classifies the
+            security checks as passed or requiring attention.
+          </li>
+          <li>
+            <strong>Scan History:</strong> Stores previous security
+            scan results for reference.
+          </li>
+        </ul>
+      </InfoCard>
+
+      <InfoCard title="Technology Stack" icon={<CodeIcon />}>
+        <p className="text-gray-300 mb-4">
+          The application uses the following technologies for
+          development and system monitoring:
+        </p>
+
+        <ul className="list-disc list-inside space-y-2 pl-2 text-gray-300">
+          <li>
+            <strong>Frontend:</strong> Next.js and React for building
+            the user interface.
+          </li>
+          <li>
+            <strong>Programming Language:</strong> TypeScript for
+            frontend development and Python for backend development.
+          </li>
+          <li>
+            <strong>Styling:</strong> Tailwind CSS for dashboard
+            styling and responsive layouts.
+          </li>
+          <li>
+            <strong>Backend:</strong> FastAPI for handling API
+            requests and collecting system information.
+          </li>
+          <li>
+            <strong>System Monitoring:</strong> Python psutil and
+            Windows PowerShell for collecting system and security data.
+          </li>
+          <li>
+            <strong>Database:</strong> SQLite for storing security
+            scan history.
+          </li>
+          <li>
+            <strong>Data Visualization:</strong> Recharts for
+            displaying security assessment results.
+          </li>
+        </ul>
+      </InfoCard>
+    </div>
+  )
+}
+
+export default About
